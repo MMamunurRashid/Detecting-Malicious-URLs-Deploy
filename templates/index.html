@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL Classifier using Voting Ensemble model</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="mt-20 mx-20 text-center">
+    <h1 class="text-center text-3xl font-serif mb-5">
+      URL Classifier using Voting Ensemble model
+    </h1>
+    <form method="POST" action="/predict">
+      <label for="url" class="text-xl">Enter a URL:</label>
+      <br />
+      <input
+        type="text"
+        placeholder="Enter a URL"
+        class="input input-bordered w-1/2 my-5"
+        id="url"
+        name="url"
+        required
+      />
+      <input type="submit" value="Predict" class="btn btn-primary" />
+    </form>
+    {% if url %}
+    <p class="text-lg">Entered URL: {{ url }}</p>
+    <p class="text-xl font-serif my-3">Result: {{ result }}</p>
+    {% endif %}
+  </body>
+</html>
